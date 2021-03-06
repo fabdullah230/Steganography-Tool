@@ -5,10 +5,14 @@ import javax.swing.JFrame;
 import javax.swing.Icon;
 import java.awt.Component;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 public class build
 {
-    public static void main(final String[] args) throws IOException {
+    public static void main(final String[] args) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
+    	UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+
         final String[] options = { "Encrypt", "Decrypt" };
         final int x = JOptionPane.showOptionDialog(null, "What would you like to do?", "Steganography Tool", -1, 1, null, options, options[0]);
         System.out.println(x);
